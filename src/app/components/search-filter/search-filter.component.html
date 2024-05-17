@@ -1,1 +1,64 @@
-<p>search-filter works!</p>
+<div class="container mx-auto px-4 py-9 w-full">
+    <form class="grid gap-4 lg:grid-cols-6 md:grid-cols-4 grid-rows-auto" [formGroup]="tripForm">
+        <div>
+            <label for="countryToVisit" class="block text-gray-700">Country to Visit</label>
+            <input type="text" id="countryToVisit" formControlName="countryToVisit"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+                placeholder="Enter country to visit" />
+        </div>
+
+        <div>
+            <label for="countryComingFrom" class="block text-gray-700">Country Coming From</label>
+            <input type="text" id="countryComingFrom" formControlName="countryComingFrom"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+                placeholder="Enter country coming from" />
+        </div>
+
+        <div>
+            <label for="dateFrom" class="block text-gray-700">Date From</label>
+            <input type="date" id="dateFrom" formControlName="dateFrom"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md" />
+        </div>
+
+        <div>
+            <label for="dateTo" class="block text-gray-700">Date To</label>
+            <input type="date" id="dateTo" formControlName="dateTo"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md" />
+        </div>
+
+        <div>
+            <label for="budget" class="block text-gray-700">Budget</label>
+            <input type="number" id="budget" formControlName="budget"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="Enter your budget" />
+        </div>
+
+        <div>
+            <label class="block text-gray-700">Services Needed</label>
+            <div class="flex">
+                <div class="mt-2 pr-5">
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" formControlName="hotel" class="form-checkbox text-blue-600" />
+                        <span class="ml-2">Hotel</span>
+                    </label>
+                </div>
+                <div class="mt-2 pr-5">
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" formControlName="flight" class="form-checkbox text-blue-600" />
+                        <span class="ml-2">Flight</span>
+                    </label>
+                </div>
+                <div class="mt-2 pr-5">
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" formControlName="taxi" class="form-checkbox text-blue-600" />
+                        <span class="ml-2">Taxi</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="text-center mt-8">
+        <button class="w-1/3 bg-teal-500 text-white py-2 px-4 rounded-md hover:bg-teal-600" (click)="planTrip()">
+            Plan My Trip
+        </button>
+    </div>
+</div>
